@@ -6,13 +6,16 @@ namespace HelloWorld
     {
         static void Main()
         {
-            string UserAge = "3";
+            int UserAge = 3;
+            string UserInput;
 
             Console.WriteLine("Type in userage!");
-           UserAge = Console.ReadLine();
+            UserAge = Convert.ToInt16(UserAge);
+            UserInput = Console.ReadLine();
+            
 
             if (
-                UserAge == "4"
+                UserInput == "4"
                 )
 
             {
