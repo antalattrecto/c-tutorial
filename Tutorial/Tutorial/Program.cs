@@ -6,38 +6,32 @@ namespace HelloWorld
     {
         static void Main()
         {
-            int UserAge;
+            int UserAge = 3;
+            string UserInput;
 
             Console.WriteLine("Type in userage!");
-            Console.ReadLine();
+            UserAge = Convert.ToInt16(UserAge);
+            UserInput = Console.ReadLine();
+            
 
-            try
+            if (
+                UserInput == "4"
+                )
+
             {
+                Console.WriteLine("Hello World!");
 
-                if (
-                    UserAge >= 4
-                    )
-
-                {
-                    Console.WriteLine("Hello World!");
-
-                }
-
-                else
-                {
-                    Console.WriteLine("Bujok");
-                }
-
-
-                // Keep the console window open in debug mode.
-                Console.WriteLine("Press any key to exit.");
-                Console.ReadKey();
             }
 
-            catch (InvalidCastException e)
+            else
             {
-                Console.WriteLine("Invalid input, please type in an integer between 0-100", e);
+                Console.WriteLine("Bujok");
             }
+
+
+            // Keep the console window open in debug mode.
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
         }
     }
 }
