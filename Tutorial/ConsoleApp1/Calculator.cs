@@ -28,7 +28,7 @@ namespace Second
 
                 second = Convert.ToDouble(Console.ReadLine());
 
-                Console.Write("Enter operator (+, -, *, / ): ");
+                Console.Write("Enter your operator (+, -, *, /, % ): ");
                 op = (char)Console.Read();
 
                 switch (op)
@@ -61,6 +61,14 @@ namespace Second
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadLine();
                         break;
+
+                    case '%':
+                        result = first * second / 100;
+                        Console.WriteLine("The result is: {0}", result);
+                        Console.WriteLine("Press any key to continue.");
+                        Console.ReadLine();
+                        break;
+
 
                     default:
                         Console.WriteLine("Invalid operator! Press any key to continue.");
