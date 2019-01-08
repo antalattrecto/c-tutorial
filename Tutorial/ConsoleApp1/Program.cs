@@ -10,54 +10,93 @@ namespace Second
     {
         static void Main(string[] args)
         {
-            char op;
-            double first, second, result;
-
-            Console.Write("Type in integer for A: ");
-            first = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Type in integer for B: ");
-            second = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Enter operator (+, -, *, / ): ");
-            op = (char)Console.Read();
-
-            switch (op)
+            Again:
+            try
             {
-               
-                case '+':
-                    result = first + second;
-                    Console.WriteLine("The result is: {0}", result);
-                    Console.ReadLine();
-                    break;
 
-                case '-':
-                    result = first - second;
-                    Console.WriteLine("The result is: {0}", result);
-                    Console.ReadLine();
-                    break;
+                char op;
+                double first, second, result;
+                string userInput;
 
-                case '*':
-                    result = first * second;
-                    Console.WriteLine("The result is: {0}", result);
-                    Console.ReadLine();
-                    break;
+            Start:
 
-                case '/':
-                    result = first / second;
-                    Console.WriteLine("The result is: {0}", result);
-                    Console.ReadLine();
-                    break;
+                Console.Write("Type in your first number: ");
 
-                default:
-                    Console.WriteLine("Invalid operator!");
-                    Console.ReadLine();
-                    break;
+                first = Convert.ToDouble(Console.ReadLine());
 
+                Console.Write("Type in your second number: ");
+
+                second = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Enter operator (+, -, *, / ): ");
+                op = (char)Console.Read();
+
+                switch (op)
+                {
+
+                    case '+':
+                        result = first + second;
+                        Console.WriteLine("The result is: {0}", result);
+                        Console.WriteLine("Press any key to continue.");
+                        Console.ReadLine();
+                        break;
+
+                    case '-':
+                        result = first - second;
+                        Console.WriteLine("The result is: {0}", result);
+                        Console.WriteLine("Press any key to continue.");
+                        Console.ReadLine();
+                        break;
+
+                    case '*':
+                        result = first * second;
+                        Console.WriteLine("The result is: {0}", result);
+                        Console.WriteLine("Press any key to continue.");
+                        Console.ReadLine();
+                        break;
+
+                    case '/':
+                        result = first / second;
+                        Console.WriteLine("The result is: {0}", result);
+                        Console.WriteLine("Press any key to continue.");
+                        Console.ReadLine();
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid operator! Press any key to continue.");
+                        Console.ReadLine();
+                        break;
+
+                }
+
+
+                Console.ReadLine();
+                Console.WriteLine("Press 1 to quit, 2 to run another operation!");
+
+                userInput = Console.ReadLine();
+
+                if (userInput == "1")
+                {
+                    goto Finish;
+                }
+
+                else
+                {
+                    goto Start;
+                }
+
+            Finish:
+
+                Console.WriteLine("Good Bye!");
 
             }
 
-            Console.ReadLine();
+            catch
+            {
+                Console.WriteLine("Hit Enter and type in a valid number!");
+                Console.ReadLine();
+                goto Again;
+            }
 
         }
     }
